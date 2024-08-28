@@ -1,0 +1,45 @@
+<!-- footer -->
+<div class="footer-bottom">
+    <footer class="section-footer border-top">
+        <div class="container">
+            <section class="footer-top  padding-y">
+                <div class="row">
+                    <aside class="col-md-4 col-12">
+                        <article class="mr-md-4">
+                            <h5 class="title">Контакт</h5>
+                            <ul class="list-icon">
+                                <li> <i class="icon fa fa-map-marker"> </i> <a href="map.html">ул. Монтевидео 21, София,
+                                        България</a></li>
+                                <li> <i class="icon fa fa-envelope"> </i>
+                                    <a href=""> newscenter&#64;gmail.com</a>
+                                </li>
+                                <li> <i class="icon fa fa-phone"> </i> (800) 060-0730, (800) 060-0730</li>
+                            </ul>
+                        </article>
+                    </aside>
+                    <aside class="col-md-4 col-12">
+                        <h5 class="title">Информация</h5>
+                        <ul class="list-unstyled">
+                            <li> 
+                                <a href="about.html">За нас</a>
+                            </li>
+                            <li>
+                                <a href="privacy.html">Условия за ползване и Защита на данните</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md-4 col-12">
+                        <h5 class="title">Моят акаунт</h5>
+                        <ul *ngIf="isLoggedIn" class="list-unstyled">
+                            <li> <a routerLink="/edit"> Настройки </a></li>
+                            <li> <a routerLink="/changepassword"> Смяна на парола </a></li>
+                        </ul>
+                        <ul *ngIf="!isLoggedIn" class="list-unstyled">
+                            <li> <a routerLink="/forgotpassword"> Забравена парола </a></li>
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+        </div>
+    </footer>
+ </div>
