@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-5">
+        <div class="text-center">
+            <h2>Create user</h2>
+        </div>
+
+        <hr class="m-3">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" formControlName="email">
+            </div>
+            <div class="text-center mt-2">
+                <span *ngIf="email?.touched && email?.errors?.['email']" class="text-danger">
+                    Email field is required!
+                </span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" formControlName="username">
+            </div>
+            <div class="text-center mt-2">
+                <span *ngIf="username?.touched && username?.errors?.['required']" class="text-danger">
+                    Username field is required!
+                </span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Role</label>
+                <input type="text" class="form-control" formControlName="role">
+            </div>
+            <div class="text-center mt-2">
+                <span *ngIf="role?.touched && role?.errors?.['required']" class="text-danger">
+                    Role field is required!
+                </span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">First name</label>
+                <input type="text" class="form-control" formControlName="firstName">
+            </div>
+            <div class="text-center mt-2">
+                <span *ngIf="firstName?.touched && firstName?.errors?.['required']" class="text-danger">
+                    First Name field is required!
+                </span>
+            </div>
+              <div class="mb-3">
+                <label class="form-label">Last name</label>
+                <input type="text" class="form-control" formControlName="lastName">
+              </div>
+              <div class="text-center mt-2">
+                <span *ngIf="lastName?.touched && lastName?.errors?.['required']" class="text-danger">
+                    Last Name field is required!
+                </span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="text-center mt-2">
+                <span *ngIf="password?.errors?.['minlength']" class="text-danger">
+                    Password should be at least 6 digits!
+                </span>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2">
+    
+    </div>
+    
+</div>

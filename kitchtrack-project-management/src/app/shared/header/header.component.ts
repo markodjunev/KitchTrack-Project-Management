@@ -15,4 +15,8 @@ export class HeaderComponent {
     return false;
   }
 
+  logout(){
+    return true;
+  }
+
 }

@@ -30,13 +30,13 @@
         </ul>
         <ul class="navbar-nav justify-content-right">
             <li *ngIf="!isLoggedIn" class="nav-item">
-                <a class="nav-link active" routerLink="/login">Login</a>
+                <a class="nav-link active" routerLink="/">Login</a>
             </li>
             <li *ngIf="!isLoggedIn" class="nav-item">
-                <a class="nav-link active" routerLink="/register">Register</a>
+                <a class="nav-link active" routerLink="/">Register</a>
             </li>
             <li *ngIf="isLoggedIn" class="nav-item">
-              <a class="nav-link active" routerLink="/">Hello {{ names }}</a>
+              <a class="nav-link active" routerLink="/">Hello</a>
             </li>
             <li *ngIf="isLoggedIn" class="nav-item">
               <a class="nav-link active" (click)="logout()" routerLink="/">Logout</a>
