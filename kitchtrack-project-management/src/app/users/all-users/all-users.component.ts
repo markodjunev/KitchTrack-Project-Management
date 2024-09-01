@@ -14,9 +14,9 @@ import { NgFor } from '@angular/common';
 export class AllUsersComponent {
   protected users: Array<IUserDto> | undefined
   // protected users: IUserDto[] = [
-  //   { id: 1, username: 'Mark', password: 'password123', email: 'mark@example.com', role: 'Admin', firstName: 'Mark', lastName: 'Otto' },
-  //   { id: 2, username: 'Jacob', password: 'password123', email: 'jacob@example.com', role: 'User', firstName: 'Jacob', lastName: 'Thornton' },
-  //   { id: 3, username: 'Larry', password: 'password123', email: 'larry@example.com', role: 'User', firstName: 'Larry', lastName: 'Bird' }
+  //   { id: 1, username: 'Mark', password: 'password123', email: 'mark@example.com', role: 'Admin', first_name: 'Mark', last_name: 'Otto' },
+  //   { id: 2, username: 'Jacob', password: 'password123', email: 'jacob@example.com', role: 'User', first_name: 'Jacob', last_name: 'Thornton' },
+  //   { id: 3, username: 'Larry', password: 'password123', email: 'larry@example.com', role: 'User', first_name: 'Larry', last_name: 'Bird' }
   // ];
 
   constructor(private usersService: UsersService, private router: Router) { }

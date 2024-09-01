@@ -32,9 +32,9 @@ export class CreateUserComponent implements OnInit {
       'email': ['', [Validators.required, Validators.email]],
       'username': ['', [Validators.required]],
       'role': ['', [Validators.required]],
-      'firstName': ['', [Validators.required]],
-      'lastName': ['', [Validators.required]],
-      'team': ['', [Validators.required]],
+      'first_name': ['', [Validators.required]],
+      'last_name': ['', [Validators.required]],
+      'team_id': ['', [Validators.required]],
       'password': ['', [Validators.required, Validators.minLength(6)]],
     })
   }
@@ -70,16 +70,16 @@ export class CreateUserComponent implements OnInit {
     return this.registerForm.get('role');
   }
 
-  get firstName() {
-    return this.registerForm.get('firstName');
+  get first_name() {
+    return this.registerForm.get('first_name');
   }
 
-  get lastName() {
-    return this.registerForm.get('lastName');
+  get last_name() {
+    return this.registerForm.get('last_name');
   }
 
-  get team() {
-    return this.registerForm.get('team');
+  get team_id() {
+    return this.registerForm.get('team_id');
   }
 
   get password() {

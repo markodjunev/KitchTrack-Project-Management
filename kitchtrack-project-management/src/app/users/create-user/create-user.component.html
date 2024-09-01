@@ -38,31 +38,31 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">First name</label>
-                <input type="text" class="form-control" formControlName="firstName">
+                <input type="text" class="form-control" formControlName="first_name">
             </div>
             <div class="text-center mt-2">
-                <span *ngIf="firstName?.touched && firstName?.errors?.['required']" class="text-danger">
+                <span *ngIf="first_name?.touched && first_name?.errors?.['required']" class="text-danger">
                     First Name field is required!
                 </span>
             </div>
             <div class="mb-3">
                 <label class="form-label">Last name</label>
-                <input type="text" class="form-control" formControlName="lastName">
+                <input type="text" class="form-control" formControlName="last_name">
             </div>
             <div class="text-center mt-2">
-                <span *ngIf="lastName?.touched && lastName?.errors?.['required']" class="text-danger">
+                <span *ngIf="last_name?.touched && last_name?.errors?.['required']" class="text-danger">
                     Last Name field is required!
                 </span>
             </div>
             <div class="mb-3">
                 <label class="form-label">Team</label>
             </div>
-            <select class="form-control" formControlName="team">
+            <select class="form-control" formControlName="team_id">
                 <option value="">Select</option>
                 <option *ngFor="let t of teams" [value]="t.id">{{t.name}}</option>
             </select>
             <div class="text-center mt-2">
-                <span *ngIf="team?.touched && team?.errors?.['required']" class="text-danger">
+                <span *ngIf="team_id?.touched && team_id?.errors?.['required']" class="text-danger">
                     Team field is required!
                 </span>
             </div>

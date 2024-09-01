@@ -10,8 +10,9 @@ export interface IUserDto {
     password: string,
     email: string,
     role: string,
-    firstName: string,
-    lastName: string,
+    team_id: number,
+    first_name: string,
+    last_name: string,
 }
 
 export interface ICreateProject {
