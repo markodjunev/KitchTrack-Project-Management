@@ -1,30 +1,48 @@
-import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgForOf, NgIf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
+import { ITeamDto } from '../../models/IModels';
+import { TeamsService } from '../../services/teams.service';
 
 @Component({
   selector: 'app-create-user',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf, NgForOf],
   templateUrl: './create-user.component.html',
   styleUrl: './create-user.component.css'
 })
-export class CreateUserComponent {
+export class CreateUserComponent implements OnInit {
   registerForm : FormGroup;
+  protected teams: ITeamDto[] | undefined
+  // protected teams: ITeamDto[] = [
+  //   { id: 1, name: 'Team A', project_id: 101 },
+  //   { id: 2, name: 'Team B', project_id: 102 },
+  //   { id: 3, name: 'Team C', project_id: 103 }
+  // ];
+
+
   constructor(
-    private userService: UsersService,
-    private fb: FormBuilder,
-    private router: Router,) {
+  private userService: UsersService,
+  private fb: FormBuilder,
+  private router: Router,
+  private teamsService: TeamsService) {
     this.registerForm = this.fb.group( {
       'email': ['', [Validators.required, Validators.email]],
       'username': ['', [Validators.required]],
       'role': ['', [Validators.required]],
       'firstName': ['', [Validators.required]],
       'lastName': ['', [Validators.required]],
+      'team': ['', [Validators.required]],
       'password': ['', [Validators.required, Validators.minLength(6)]],
     })
+  }
+
+  ngOnInit(): void {
+    this.teamsService.getAll().subscribe(data => {
+      //this.teams = data;
+    });
   }
 
   register() {
@@ -58,6 +76,10 @@ export class CreateUserComponent {
 
   get lastName() {
     return this.registerForm.get('lastName');
+  }
+
+  get team() {
+    return this.registerForm.get('team');
   }
 
   get password() {
